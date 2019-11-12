@@ -52,7 +52,7 @@ int getIntegerInput(void) {
 int configUser(void) {
 
 	printf("put a number of players (max :5) :");
-	scanf("%d", &n_user);
+	n_user = getIntegerInput();
 	
 	return;
 }
@@ -61,10 +61,15 @@ int configUser(void) {
 //betting
 int betDollar(void) {
 	
-	int betdollar;
-
-	printf("your betting (total : %d) :", N_DOLLAR);
-	scanf("%d", &bet);
+	int betting;
+	
+	printf("your betting (total : %d) :", dollar[N_MAX_USER]);
+    betting = getIntegerInput();
+    
+    if(betting<0||betting>50)
+    {
+    	printf("You only have $50\n");
+	}
 	
 }
 
@@ -84,7 +89,7 @@ int main(int argc, char *argv[]) {
 	//1. players' dollar
 	
 	//2. card tray
-	mixCardTray();
+	mixCardTray(i);
 
 
 
@@ -99,7 +104,7 @@ int main(int argc, char *argv[]) {
 		printf("\n------------------ GAME start --------------------------\n");
 		
 		//each player's turn
-		for () //each player
+		for (i=0; i<max_user; i++) //each player
 		{
 			while () //do until the player dies or player says stop
 			{

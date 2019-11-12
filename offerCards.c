@@ -5,7 +5,7 @@
 
 //get one card from the tray
 int pullCard(void) {
-
+	
 }
 
 //offering initial 2 cards

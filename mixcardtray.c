@@ -9,7 +9,6 @@
 int mixCardTray(){
 	
 	int i, j;
-	int num;
 	int CardTray[N_CARDSET*N_CARD];
 	
 	for(i=0; i<N_CARD; i++)
