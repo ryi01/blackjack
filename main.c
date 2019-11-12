@@ -63,7 +63,7 @@ int betDollar(void) {
 	
 	int betting;
 	
-	printf("your betting (total : %d) :", dollar[N_MAX_USER]);
+	printf("your betting (total : %d) :", betting);
     betting = getIntegerInput();
     
     if(betting<0||betting>50)
@@ -89,7 +89,7 @@ int main(int argc, char *argv[]) {
 	//1. players' dollar
 	
 	//2. card tray
-	mixCardTray(i);
+	mixCardTray();
 
 
 
@@ -104,13 +104,13 @@ int main(int argc, char *argv[]) {
 		printf("\n------------------ GAME start --------------------------\n");
 		
 		//each player's turn
-		for (i=0; i<max_user; i++) //each player
+		for (i=0; i<(max_user-1); i++) //each player
 		{
 			while () //do until the player dies or player says stop
 			{
-				//print current card status printUserCardStatus();
-				//check the card status ::: calcStepResult()
-				//GO? STOP? ::: getAction()
+				printUserCardStatus();//print current card status printUserCardStatus();
+				calcStepResult();//check the card status ::: calcStepResult()
+				getAction();//GO? STOP? ::: getAction()
 				//check if the turn ends or not
 			}
 		}

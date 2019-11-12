@@ -4,8 +4,17 @@
 //print the card information (e.g. DiaA)
 void printCard(int cardnum) {
 	
-	int i, j;
+	int i, j, card[4][13];
 	
+	card[4][13]=mixCardTray();
+	
+	for(i=0; i<4; i++)
+	{
+		for(j=0; j<13; j++)
+		{
+			card[i][j];
+		}
+	}
 	switch(i)
 		{
 			case 0 :

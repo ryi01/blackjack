@@ -10,7 +10,7 @@ int getAction(){
 	{
 		mixCardTray();
 	}
-	els if(action!=0)
+	else if(action!=0)
 	{
 		return 0;
 	}
