@@ -1,14 +1,19 @@
 //calculate the actual card number in the blackjack game
 int getCardNum(int cardnum) {
 	
-	int i, j;
-	int cardnum;
+	int i;//들어온 숫자 
 	
-	printCard(cardnum[i][j]);
-	
-	if(j==10||j==11||j==12)
+	if(i==10||i==11||i==12)
 	{
 		cardnum=10;
+	}
+	else if(i==0)//A가 들어갈 경우 
+	{
+		if()
+		{
+			cardnum= 
+		}
+	
 	}
 	
 	return cardnum;

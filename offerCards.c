@@ -2,9 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 
+extern int cardhold[N_MAX_USER+1][N_MAX_CARDHOLD];
+extern int CardTray[N_CARDSET*N_CARD];
 
 //get one card from the tray
 int pullCard(void) {
+	
+	mixCardTray();
 	
 }
 

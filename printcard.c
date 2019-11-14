@@ -4,17 +4,14 @@
 //print the card information (e.g. DiaA)
 void printCard(int cardnum) {
 	
-	int i, j, card[4][13];
+	int i, j;
+	int card[4][13];
 	
-	card[4][13]=mixCardTray();
+	card[i][j]=mixCardTray();
 	
-	for(i=0; i<4; i++)
-	{
-		for(j=0; j<13; j++)
-		{
-			card[i][j];
-		}
-	}
+	i = cardnum/13;
+	j = cardnum%13;
+	
 	switch(i)
 		{
 			case 0 :
@@ -53,12 +50,8 @@ void printCard(int cardnum) {
 		break;
 				
 		default :
-			printf("%d", j);
+			printf("%d", j+1);
 		break;
-	}
-	
-	
-	return card[i][j];
-	
+	}	
 }
 
