@@ -7,11 +7,6 @@ void printCard(int cardnum) {
 	int i, j;
 	int card[4][13];
 	
-	card[i][j]=mixCardTray();
-	
-	i = cardnum/13;
-	j = cardnum%13;
-	
 	switch(i)
 		{
 			case 0 :
@@ -53,5 +48,6 @@ void printCard(int cardnum) {
 			printf("%d", j+1);
 		break;
 	}	
+	return card[i][j];
 }
 

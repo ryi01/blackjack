@@ -9,11 +9,7 @@ int getCardNum(int cardnum) {
 	}
 	else if(i==0)//A가 들어갈 경우 
 	{
-		if()
-		{
-			cardnum= 
-		}
-	
+		cardnum=11;
 	}
 	
 	return cardnum;

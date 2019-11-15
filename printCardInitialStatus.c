@@ -5,12 +5,18 @@ extern n_user;
 //print initial card status
 void printCardInitialStatus(void) {
 	
-	int i;
+	int i, j;
 	
-	printf("delear's card : %d X", );
+	j = offerCards();
+	printCard(j);
 	
-	for(i=0; i<n_user; i++)
+	printf("delear's card : %d X\n", printCard(j));
+	
+	printf("Your card : %d\n")
+	
+	for(i=0; i<n_user-1; i++)
 	{
-		printf("player %d's card : %d %d", n_user-1, );
+		printf("player %d's card : %d %d\n", n_user+1, printcard(j), );
+		// modification 
 	 } 
 }
