@@ -5,7 +5,7 @@
 void printCard(int cardnum) {
 	
 	int i, j;
-	int card[4][13];
+	int card[4][13] = mixCardTray();
 	
 	switch(i)
 		{

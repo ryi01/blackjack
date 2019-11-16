@@ -1,4 +1,7 @@
 
 
 int printUserCardStatus(){
+	
+	printCardInitialStatus();
+	getaction();
 }

@@ -63,6 +63,7 @@ int configUser(void) {
 			printf("too many players!!");
 		}
 	}while(n_user<0||n_user>N_MAX_USER);
+	
 	return;
 }
 
@@ -73,25 +74,27 @@ int betDollar(void) {
 	int betting;
 	int i;
 	
+	
 	do{
-		printf("your betting (total : %d) :", );
+		printf("your betting (total : %d) :", dollar[0]);
     	betting = getIntegerInput();
     
-   		 if(betting<0||betting>max_dollar)
+   		 if(betting<0||betting>dollar[0])
     	{
-    		printf("You only have %d\n", );
+    		printf("You only have %d\n", dollar[0] );
 		}
 		
 		bet[0]=betting;
 		
-	}while(betting<0||betting>50);
+	}while(betting<0||betting>dollar[0]);
 	
-	for(i=0; i<(n_user-2); i++)
+	for(i=0; i<(n_user-1); i++)
 	{
 		i = rand%50+1;
-		printf("player %d : $%d", n_user+2, i)
-		bet[n_user]=i;
+		printf("player %d : $%d", n_user+1, dollar[i]);
+		bet[i]=i;
 	}
+	
 	
 	return;
 }

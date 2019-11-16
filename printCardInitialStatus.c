@@ -7,16 +7,15 @@ void printCardInitialStatus(void) {
 	
 	int i, j;
 	
-	j = offerCards();
-	printCard(j);
+	offerCards();
+
+	printf("delear's card : %d X\n", cardhold[n_user][0]);
 	
-	printf("delear's card : %d X\n", printCard(j));
+	printf("Your card : %d %d\n", cardhold[0][0], cardhold[0][1])
 	
-	printf("Your card : %d\n")
-	
-	for(i=0; i<n_user-1; i++)
+	for(i=0; i<n_user; i++)
 	{
-		printf("player %d's card : %d %d\n", n_user+1, printcard(j), );
+		printf("player %d's card : %d %d\n", i+1, cardhold[i+1][0], cardhold[i+1][1]);
 		// modification 
 	 } 
 }
