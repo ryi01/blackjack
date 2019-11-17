@@ -5,7 +5,7 @@
 void printCard(int cardnum) {
 	
 	int i, j;
-	int card[4][13] = mixCardTray();
+	int card[4][13];
 	
 	switch(i)
 		{
@@ -48,6 +48,5 @@ void printCard(int cardnum) {
 			printf("%d", j+1);
 		break;
 	}	
-	return card[i][j];
 }
 

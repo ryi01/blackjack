@@ -11,26 +11,24 @@ extern int cardIndex = 0;
 //mix the card sets and put in the array
 int mixCardTray(){
 	
-	int i, j;
-	int card[i][j];
+	int i, j, k;
+	int card[i];
 	
-	for(i=0; i<4; i++)
+	for(i=0;i<N_card;i++)
 	{
-		for(j=0; j<13; j++)
-		{
-			cardIndex = (rand()%52)+1;
+		card[i]=rand()%52;
+		
+		for(j=0; j<i; j++){
 			
-			if(CardTray[cardIndex]==0){
-				card[i][j]=cardIndex;
-				CardTray[cardIndex] = 1;
-			}
-			
-			else{
-				j--;
+			if(card[j]==card[i])
+			{
+				i--;
+				break;
 			}
 		}
- 	}
+		cardIndex++;
+	}
  	
- 	return card[i][j];
+ 	return;
 
 }

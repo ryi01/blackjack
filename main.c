@@ -52,7 +52,7 @@ int getIntegerInput(void) {
 int configUser(void) {
  
 	do{
-		printf("put the number of players (max :5) :");
+		printf("Input the number of players (max :5) :");
 		n_user = getIntegerInput();
 		if(n_user<0)
 		{
@@ -63,6 +63,8 @@ int configUser(void) {
 			printf("too many players!!");
 		}
 	}while(n_user<0||n_user>N_MAX_USER);
+	
+	printf("--> card is mixed and put into the tray");
 	
 	return;
 }
@@ -79,20 +81,24 @@ int betDollar(void) {
 		printf("your betting (total : %d) :", dollar[0]);
     	betting = getIntegerInput();
     
-   		 if(betting<0||betting>dollar[0])
+   		 if(betting>dollar[0])
     	{
     		printf("You only have %d\n", dollar[0] );
+		}
+		else(betting<dollar[0])
+		{
+			printf("Input betting!\n")
 		}
 		
 		bet[0]=betting;
 		
 	}while(betting<0||betting>dollar[0]);
 	
-	for(i=0; i<(n_user-1); i++)
+	for(i=0; i<(n_user-1); i++)//not include you
 	{
-		i = rand%50+1;
-		printf("player %d : $%d", n_user+1, dollar[i]);
-		bet[i]=i;
+		i = rand()%N_MAX_BET+1;
+		printf("player %d : $%d\n", n_user+1, bet[n_user+1]);
+		bet[n_user+1]=i;//player bet
 	}
 	
 	
@@ -113,6 +119,10 @@ int main(int argc, char *argv[]) {
 
 	//Game initialization --------
 	//1. players' dollar
+	for(i=0; i<n_user; i++)
+	{
+		dollar[i]=50;
+	}
 	
 	//2. card tray
 	mixCardTray();
@@ -122,8 +132,11 @@ int main(int argc, char *argv[]) {
 	//Game start --------
 	do {
 		
+		printf("----------Round %d (cardIndex : %d)----------", roundIndex+1, cardIndex);
 		
+		printf("---------- BETTING STEP ----------");
 		betDollar();
+		
 		offerCards(); //1. give cards to all the players
 		
 		printCardInitialStatus();
@@ -134,15 +147,17 @@ int main(int argc, char *argv[]) {
 		{
 			while () //do until the player dies or player says stop
 			{
-				printUserCardStatus();//print current card status printUserCardStatus();
-				calcStepResult();//check the card status ::: calcStepResult()
-				getAction();//GO? STOP? ::: getAction()
+				//print current card status printUserCardStatus();
+				//check the card status ::: calcStepResult()
+				//GO? STOP? ::: getAction()
 				//check if the turn ends or not
 			}
 		}
 		
 		//result
 		checkResult();
+		roundIndex++;
+		
 	} while (gameEnd == 0);
 	
 	checkWinner();

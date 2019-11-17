@@ -6,16 +6,18 @@ extern n_user;
 void printCardInitialStatus(void) {
 	
 	int i, j;
+	mixCardTray();
+	prinCard();
 	
-	offerCards();
+	printf("--------CARD OFFERING--------\n")
 
-	printf("delear's card : %d X\n", cardhold[n_user][0]);
+	printf("-->> Server : X %d\n", cardhold[n_user][0]);
 	
-	printf("Your card : %d %d\n", cardhold[0][0], cardhold[0][1])
+	printf("-->> Your : %d %d\n", cardhold[0][0], cardhold[0][1])
 	
 	for(i=0; i<n_user; i++)
 	{
-		printf("player %d's card : %d %d\n", i+1, cardhold[i+1][0], cardhold[i+1][1]);
+		printf("-->> Player %d : %d %d\n", i+1, cardhold[i+1][0], cardhold[i+1][1]);
 		// modification 
 	 } 
 }

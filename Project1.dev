@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=5
 CompilerSettings=0000000100000000101000000
-UnitCount=11
+UnitCount=10
 
 [VersionInfo]
 Major=1
@@ -39,14 +39,14 @@ Build=0
 LanguageID=1033
 CharsetID=1252
 CompanyName=
-FileVersion=
+FileVersion=1.0.0.0
 FileDescription=Developed using the Dev-C++ IDE
 InternalName=
 LegalCopyright=
 LegalTrademarks=
 OriginalFilename=
 ProductName=
-ProductVersion=
+ProductVersion=1.0.0.0
 AutoIncBuildNr=0
 SyncProduct=1
 
@@ -100,16 +100,6 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit7]
-FileName=getCardNum.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
 [Unit5]
 FileName=getaction.c
 CompileCpp=0
@@ -121,7 +111,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit9]
-FileName=caclStepResult.c
+FileName=checkResult.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -131,7 +121,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit10]
-FileName=checkResult.c
+FileName=checkWinner.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -161,6 +151,16 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit8]
+FileName=caclStepResult.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit7]
 FileName=printUserCardStatus.c
 CompileCpp=0
 Folder=
