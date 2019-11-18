@@ -119,7 +119,7 @@ int main(int argc, char *argv[]) {
 
 	//Game initialization --------
 	//1. players' dollar
-	for(i=0; i<n_user; i++)
+	for(i=0; i<max_user; i++)
 	{
 		dollar[i]=50;
 	}
@@ -142,8 +142,23 @@ int main(int argc, char *argv[]) {
 		printCardInitialStatus();
 		printf("\n------------------ GAME start --------------------------\n");
 		
+		printf(">>> YOUR TURN! ------\n");//your turn
+		
+		do{
+			
+			printf(" --> card %d \n", )
+			printf(":::Action? (0 - go, others - stop) :");
+			Go = getIntegerInput();
+		
+			if(Go==0)
+			{
+				cardhold[0][i]=mixCardTray();
+			}
+			i++;
+		}while(Go!=0)
+		
 		//each player's turn
-		for (i=0; i<(max_user-1); i++) //each player
+		for (i=0; i<(n_user); i++) //each player
 		{
 			while () //do until the player dies or player says stop
 			{
@@ -155,6 +170,7 @@ int main(int argc, char *argv[]) {
 		}
 		
 		//result
+		printf("----------Round %d result", roundindex);
 		checkResult();
 		roundIndex++;
 		

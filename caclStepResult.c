@@ -54,15 +54,16 @@ int calcStepResult(){
 			cardSum[j+1]+=cardnum;
 		}
 	}
-
 	if(cardSum[j]==21)
 	{
-		bet[j]=dollar[j]+2*bet[i];
-		printf(":::BLACK JACK!! --> 2 x %d ($%d)", bet[i], bet[j]);
+		dollar[i]=2*bet[i];
+		printf(":::BLACK JACK!! --> 2 x %d ($%d)", bet[i], dollar[i]);
 	}
 	else if(cardSum[j]>21)
 	{
-		bet[j]=dollar[j]-bet[i];
-		printf(":::DEAD(sum : %d) --> -%d ($%d) ", cardSum[0], bet[i], bet[j]);
+		dollar[i]-=bet[i];
+		printf(":::DEAD(sum : %d) --> -%d ($%d) ", cardSum[0], bet[i], dollar[i]);
 	}
+
+	
 }

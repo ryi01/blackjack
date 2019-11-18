@@ -8,8 +8,12 @@ extern int CardTray[N_CARDSET*N_CARD];
 //get one card from the tray
 int pullCard(void) {
 	
-	mixCardTray();
+	int i;
 	
+	for(i=0;i<1;i++)
+	{
+		mixCardTray(i);
+	}
 }
 
 //offering initial 2 cards
