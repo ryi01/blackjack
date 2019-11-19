@@ -5,8 +5,7 @@
 #define N_CARDSET			1
 #define N_CARD				52
 
-extern int CardTray[N_CARDSET*N_CARD];
-extern int cardIndex=0;		
+extern int CardTray[N_CARDSET*N_CARD];		
 	
 //mix the card sets and put in the array
 int mixCardTray(){
@@ -26,7 +25,6 @@ int mixCardTray(){
 				break;
 			}
 		}
-		cardIndex++;
 	}
-
+	return;
 }

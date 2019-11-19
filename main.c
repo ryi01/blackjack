@@ -64,45 +64,39 @@ int configUser(void) {
 		}
 	}while(n_user<0||n_user>N_MAX_USER);
 	
-	printf("--> card is mixed and put into the tray");
-	
-	return;
+	printf("--> card is mixed and put into the tray\n\n");
 }
 
 
 //betting
 int betDollar(void) {
 	
-	int betting;
 	int i;
+	int betting;
 	
-	
-	do{
+	while(betting<0||betting>dollar[0])
+	{
 		printf("your betting (total : %d) :", dollar[0]);
     	betting = getIntegerInput();
     
-   		 if(betting>dollar[0])
+   	 	if(betting>dollar[0])
     	{
-    		printf("You only have %d\n", dollar[0]);
+   			printf("You only have %d\n", dollar[0]);
 		}
-		else if(betting<dollar[0])
+		else if(betting < 0)
 		{
 			printf("Input betting!\n");
 		}
-		
-		bet[0]=betting;
-		
-	}while(betting<0||betting>dollar[0]);
-	
-	for(i=0; i<(n_user-1); i++)//not include you
-	{
-		i = rand()%N_MAX_BET+1;
-		printf("player %d : $%d\n", n_user+1, bet[n_user+1]);
-		bet[n_user+1]=i;//player bet
 	}
+	bet[0]=betting;
 	
-	
-	return;
+	for(i=1; i<n_user; i++)//not include you
+	{
+		
+		bet[i]=rand()%5+1;//player bet
+		
+		printf("player %d : $%d\n", i, bet[i]);
+	}
 }
 
 
@@ -122,28 +116,28 @@ int main(int argc, char *argv[]) {
 	//Game initialization --------
 	//1. players' dollar
 	for(i=0; i<n_user; i++)
-	{
-		dollar[i]=50;
-	}
-	
+		{
+			dollar[i]=50;
+		}
 	//2. card tray
-	mixCardTray();
-
-
 
 	//Game start --------
 	do {
 		printf("----------------------------------------\n");
 		printf("----------Round %d (cardIndex : %d)----------", roundIndex+1, cardIndex);
-		printf("----------------------------------------\n");
+		printf("----------------------------------------\n\n");
 		
 		printf("---------- BETTING STEP ----------\n");
 		printf("----------------------------------------\n");
+		
 		betDollar();
-		printf("----------------------------------------\n");
+		
+		printf("----------------------------------------\n\n");
 		
 		printf("-------- CARD OFFERING ---------\n");
+		
 		printCardInitialStatus();
+		
 		printf("----------------------------------------\n");
 		
 		printf("\n------------------ GAME start --------------------------\n");
