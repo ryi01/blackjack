@@ -1,23 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define N_MAX_CARDHOLD		10
+#define N_MAX_USER			5
+
 extern n_user;
+extern int cardhold[N_MAX_USER+1][N_MAX_CARDHOLD];
 //print initial card status
 void printCardInitialStatus(void) {
 	
-	int i, j;
-	offerCards();
-	prinCard(cardhold[i][j]);
+	int i;
 	
-	printf("--------CARD OFFERING--------\n")
+	offerCards();
 
 	printf("-->> Server : X %d\n", printCard(cardhold[n_user][0]));
 	
-	printf("-->> Your : %d %d\n", printcard(cardhold[0][0]), printcard(cardhold[0][1]));
+	printf("-->> Your : %d %d\n", printCard(cardhold[0][0]), printCard(cardhold[0][1]));
 	
 	for(i=0; i<n_user; i++)
 	{
-		printf("-->> Player %d : %d %d\n", i+1, printcard(cardhold[i+1][0]), printcard(cardhold[][1]);
-		// modification 
+		printf("-->> Player %d : %d %d\n", i+1, printCard(cardhold[i+1][0]), printCard(cardhold[i+1][1]));
 	 } 
+	 
 }

@@ -6,7 +6,7 @@
 #define N_CARD				52
 
 extern int CardTray[N_CARDSET*N_CARD];
-extern int cardIndex = 0;		
+extern int cardIndex=0;		
 	
 //mix the card sets and put in the array
 int mixCardTray(){
@@ -14,13 +14,13 @@ int mixCardTray(){
 	int i, j, k;
 	int card[i];
 	
-	for(i=0;i<N_card;i++)
+	for(i=0;i<52;i++)
 	{
-		card[i]=rand()%52;
+		i=rand()%52;
 		
 		for(j=0; j<i; j++){
 			
-			if(card[j]==card[i])
+			if(j==i)
 			{
 				i--;
 				break;
@@ -28,7 +28,5 @@ int mixCardTray(){
 		}
 		cardIndex++;
 	}
- 	
- 	return;
 
 }

@@ -1,69 +1,63 @@
+#define N_MAX_GO			17
+
+#define N_MAX_CARDHOLD		10
+#define N_MAX_USER			5
+
 extern int cardSum[N_MAX_USER];					//sum of the cards
-extern int gameEnd = 0;
+extern int n_user;
+extern int bet[N_MAX_USER];
+extern int dollar[N_MAX_USER];	
 
 //calculate the actual card number in the blackjack game
-int getCardNum(int cardnum) {
+int getCardNum() {
 	
-	int i; 
+	int i;
+	int cardnum=0;
 	
-	offerCards();
+	if(10<=i&&i<=12)//spade j ~ k
+	{
+		cardnum = 10;
+	}
+	else if(23<=i&&i<=25)//heart j~k
+	{
+		cardnum = 10;
+	}
+	else if(36<=i&&i<=38)//club j~k
+	{
+		cardnum = 10;
+	}
+	else if(49<=i&&i<=51)//dia j~k
+	{
+		cardnum = 10;
+	}
+	else if(i==0||i==13||i == 26||i==39)//case : Ace
+	{
+		cardnum = 11;
+	}
 	
-	if(i==10||i==11||i==12)
-	{
-		cardnum=10;
-	}
-	else if(i==0)//A가 들어갈 경우 
-	{
-		cardnum=11;
-	}
-	else if(i!=0||i!=10||i!=11||i!=12)
-	{
-		cardnum=i;
-	}
 	return cardnum;
 } 
 
 int calcStepResult(){
 	
 	int i, j;
+	int cardSum[N_MAX_USER];
 	
-	do{
-		for(i=0; i<Go; i++)
-		{
-			cardSum[0]+=cardnum;
-		}
-		
-		for(j=0; j<n_user; j++)
-		{
-			for(i=1; i<Go; i++)
-				{
-					cardSum[j+1]+=cardnum;
-				}
-		}
-	}while()
+	offerCards();
+	getCardNum();
 	
-	for(i=0; i<Go; i++)//your card sum
+	for(i=0; i<n_user; i++)
 	{
-		cardSum[0]+=cardnum;
-	}
-	
-	for(j=0; j<n_user; j++)
-	{
-		for(i=1; i<Go; i++)
+		for(j=0; j<N_MAX_GO; j++)
 		{
-			cardSum[j+1]+=cardnum;
+			cardSum[i]=cardSum[i]+getCardNum;
 		}
 	}
-	if(cardSum[j]==21)
+	
+	if(cardSum[i+1]>21&&getCardNum==11)
 	{
-		dollar[i]=2*bet[i];
-		printf(":::BLACK JACK!! --> 2 x %d ($%d)", bet[i], dollar[i]);
+		cardSum[i+1]-=10;
+		return;
 	}
-	else if(cardSum[j]>21)
-	{
-		dollar[i]-=bet[i];
-		printf(":::DEAD(sum : %d) --> -%d ($%d) ", cardSum[0], bet[i], dollar[i]);
-	}
-
 	
 }

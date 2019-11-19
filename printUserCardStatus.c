@@ -1,16 +1,20 @@
 
+#define N_MAX_CARDHOLD		10
+#define N_MAX_USER			5
 
-int printUserCardStatus(){
+extern n_user;
+extern int cardhold[N_MAX_USER+1][N_MAX_CARDHOLD];
+
+int printUserCardStatus(int i){
 	
-	printCardInitialStatus();
+	int j;
 	
-	printf(">>> your turn! ------\n");
-	printf("-> card : %d %d\n ", cardhold[0][0],cardhold[0][1]);
+	offerCards();
 	
-	getAction();
+	printf(" --> card :");
 	
-	do{
-		printf(">>> player %d turn!", n_user+1);
-		printf("-> card : %d %d\n")
+	for(i=0; i<j; i++)
+	{
+		printf("%d ", printCard(cardhold[i+1][i]));
 	}
 }
