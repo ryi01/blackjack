@@ -120,6 +120,7 @@ int main(int argc, char *argv[]) {
 			dollar[i]=50;
 		}
 	//2. card tray
+	
 
 	//Game start --------
 	do {
