@@ -14,6 +14,8 @@ int getCardNum() {
 	int i;
 	int cardnum=0;
 	
+	offerCards();
+	
 	if(10<=i&&i<=12)//spade j ~ k
 	{
 		cardnum = 10;
@@ -44,14 +46,13 @@ int calcStepResult(){
 	int cardnum;
 	int cardSum[N_MAX_USER];
 	
-	offerCards();
 	getCardNum();
 	
 	for(i=0; i<n_user; i++)
 	{
 		for(j=0; j<N_MAX_GO; j++)
 		{
-			cardSum[i]=cardSum[i]+getCardNum();
+			cardSum[i]=cardSum[i]+cardnum;
 		
 			if(cardSum[i]>21 && cardnum ==11)
 			{

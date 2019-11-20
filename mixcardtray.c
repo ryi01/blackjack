@@ -12,13 +12,12 @@ extern int cardIndex;
 //mix the card sets and put in the array
 int mixCardTray(){
 	
-	int i, j, k;
+	int i, j;
 	int card;
 
 	srand((unsigned)time(NULL));
 	
-	
-	for(i=0;i<52;i++)
+	for(i=0;i<N_CARD;i++)
 	{
 		j = rand()%52;
 		

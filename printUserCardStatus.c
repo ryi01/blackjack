@@ -4,14 +4,15 @@
 
 extern n_user;
 extern int cardhold[N_MAX_USER+1][N_MAX_CARDHOLD];
+extern getaction;
 
 int printUserCardStatus(int i){
 	
-	int j;
+	int j=2;
 	
-	offerCards();
+	printf(" --> card : ");
 	
-	printf(" --> card :");
+	mixCardTray();
 	
 	for(i=0; i<j; i++)
 	{

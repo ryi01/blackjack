@@ -26,15 +26,15 @@ int checkResult(){
 	{
 		if(cardSum[i]<cardSum[n_user])
 		{
-			printf(" --> You result : lose!! (sum : %d) ---> $%d\n", cardSum[i], dollar[i]);
+			printf(" --> Player %d result : lose!! (sum : %d) ---> $%d\n", i, cardSum[i], dollar[i]);
 		}
 		else if(cardSum[i]>cardSum[n_user])
 		{
-			printf(" --> You result : Win!! (sum : %d) ---> $%d\n", cardSum[i], dollar[i]);
+			printf(" --> Player %d : Win!! (sum : %d) ---> $%d\n", i, cardSum[i], dollar[i]);
 		}
 		else if(cardSum[i]>21)
 		{
-			printf(" --> You result : Overflow!! (sum : %d) ---> $%d\n", cardSum[i], dollar[i]);
+			printf(" --> Player %d : Overflow!! (sum : %d) ---> $%d\n", i, cardSum[i], dollar[i]);
 		}
 	}
 	

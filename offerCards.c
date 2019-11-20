@@ -13,6 +13,8 @@ int pullcard(){
 	
 	mixCardTray();
 	
+	cardIndex++;//using card sum
+
 }
 //offering initial 2 cards
 void offerCards(void) {
