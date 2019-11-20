@@ -7,18 +7,16 @@
 extern int cardhold[N_MAX_USER+1][N_MAX_CARDHOLD];
 extern int CardTray[N_CARDSET*N_CARD];
 extern int n_user;
+extern int cardIndex;
 
 int pullcard(){
 	
-	int i;
-	
 	mixCardTray();
-	
-	i= mixCardTray();
 	
 }
 //offering initial 2 cards
 void offerCards(void) {
+	
 	int i;
 
 	//1. give two card for each players
@@ -31,6 +29,5 @@ void offerCards(void) {
 	cardhold[n_user][0] = pullcard();
 	cardhold[n_user][1] = pullcard();
 	
-	return;
 }
 

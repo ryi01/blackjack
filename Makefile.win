@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o mixcardtray.o offerCards.o printcard.o getaction.o printCardInitialStatus.o printUserCardStatus.o caclStepResult.o checkResult.o checkWinner.o
-LINKOBJ  = main.o mixcardtray.o offerCards.o printcard.o getaction.o printCardInitialStatus.o printUserCardStatus.o caclStepResult.o checkResult.o checkWinner.o
+OBJ      = main.o mixcardtray.o offerCards.o getaction.o printCardInitialStatus.o printUserCardStatus.o caclStepResult.o checkResult.o checkWinner.o printcard.o
+LINKOBJ  = main.o mixcardtray.o offerCards.o getaction.o printCardInitialStatus.o printUserCardStatus.o caclStepResult.o checkResult.o checkWinner.o printcard.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32 -pg -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -33,9 +33,6 @@ mixcardtray.o: mixcardtray.c
 offerCards.o: offerCards.c
 	$(CC) -c offerCards.c -o offerCards.o $(CFLAGS)
 
-printcard.o: printcard.c
-	$(CC) -c printcard.c -o printcard.o $(CFLAGS)
-
 getaction.o: getaction.c
 	$(CC) -c getaction.c -o getaction.o $(CFLAGS)
 
@@ -53,3 +50,6 @@ checkResult.o: checkResult.c
 
 checkWinner.o: checkWinner.c
 	$(CC) -c checkWinner.c -o checkWinner.o $(CFLAGS)
+
+printcard.o: printcard.c
+	$(CC) -c printcard.c -o printcard.o $(CFLAGS)

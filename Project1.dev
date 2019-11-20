@@ -80,18 +80,8 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit4]
-FileName=printcard.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
 [Unit6]
-FileName=printCardInitialStatus.c
+FileName=printUserCardStatus.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -101,7 +91,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=getaction.c
+FileName=printCardInitialStatus.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -111,7 +101,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit9]
-FileName=checkResult.c
+FileName=checkWinner.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -121,7 +111,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit10]
-FileName=checkWinner.c
+FileName=printcard.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -151,7 +141,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit8]
-FileName=caclStepResult.c
+FileName=checkResult.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -161,7 +151,17 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit7]
-FileName=printUserCardStatus.c
+FileName=caclStepResult.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit4]
+FileName=getaction.c
 CompileCpp=0
 Folder=
 Compile=1

@@ -4,88 +4,89 @@
 //print the card information (e.g. DiaA)
 void printCard() {
 	
-	int cardnum;
+	int i;
 	
-	if(0<cardnum&&cardnum<10)
+	if(0<i&&i<10)
 	{
-		printf("Spade %d", cardnum);
+		printf("Spade %d", i+1);
 	}
-	else if(cardnum==0)
+	else if(i==0)
 	{
 		printf("Spade A");
 	}
-	else if(cardnum==10)
+	else if(i==10)
 	{
-		printf("Spade J");
+		printf("Spade Jack");
 	}
-	else if(cardnum==11)
+	else if(i==11)
 	{
-		printf("Spade Q");
+		printf("Spade Queen");
 	}
-	else if(cardnum==12)
+	else if(i==12)
 	{
-		printf("Spade K");
+		printf("Spade King");
 	}
-	else if(13<cardnum&&cardnum<23)
+	else if(13<i&&i<23)
 	{
-		printf("Heart %d", cardnum-12);
+		printf("Heart %d", i-12);
 	}
-	else if(cardnum==13)
+	else if(i==13)
 	{
 		printf("Heart A");
 	}
-	else if(cardnum==23)
+	else if(i==23)
 	{
-		printf("Heart J");
+		printf("Heart Jack");
 	}
-	else if(cardnum==24)
+	else if(i==24)
 	{
-		printf("Heart Q");
+		printf("Heart Queen");
 	}
-	else if(cardnum==25)
+	else if(i==25)
 	{
-		printf("Heart K");
+		printf("Heart King");
 	}
-	
-	else if(26<cardnum&&cardnum<36)
+	else if(26<i&&i<36)
 	{
-		printf("Club %d", cardnum-25);
+		printf("Club %d", i-24);
 	}
-	else if(cardnum==26)
+	else if(i==26)
 	{
 		printf("Club A");
 	}
-	else if(cardnum==36)
+	else if(i==36)
 	{
-		printf("Club J");
+		printf("Club Jack");
 	}
-	else if(cardnum==37)
+	else if(i==37)
 	{
-		printf("Club Q");
+		printf("Club Queen");
 	}
-	else if(cardnum==38)
+	else if(i==38)
 	{
-		printf("Club K");
+		printf("Club King");
 	}
-	else if(39<cardnum&&cardnum<49)
+	else if(39<i&&i<49)
 	{
-		printf("Dia %d", cardnum-38);
+		printf("Dia %d", i-38);
 	}
-	else if(cardnum==39)
+	else if(i==39)
 	{
 		printf("Dia A");
 	}
-	else if(cardnum==49)
+	else if(i==49)
 	{
-		printf("Dia J");
+		printf("Dia Jack");
 	}
-	else if(cardnum==50)
+	else if(i==50)
 	{
-		printf("Dia Q");
+		printf("Dia Queen");
 	}
-	else if(cardnum==51)
+	else if(i==51)
 	{
-		printf("Dia K");
+		printf("Dia King");
 	}
+	
+	
 }
 
