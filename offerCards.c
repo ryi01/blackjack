@@ -15,6 +15,8 @@ int pullcard(){
 	
 	i = mixCardTray();
 	
+	cardIndex++;
+	
 	return i; 
 }
 //offering initial 2 cards

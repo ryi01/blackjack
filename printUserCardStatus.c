@@ -17,6 +17,6 @@ int printUserCardStatus(){
 	
 	for(i=0; i<j; i++)
 	{
-		printf("%d ", cardhold[i+1][i]);
+		printf("%d ", printCard(cardhold[i+1][i]));
 	}
 }

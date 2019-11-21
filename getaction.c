@@ -31,7 +31,7 @@ int getAction(){
 			
 		for(i=0; i<j; i++)
 		{
-			printf("%d ", cardhold[i][j]);
+			printf("%d ", printCard(cardhold[i][j]));
 		}
 			
 	}while(cardSum[i]<17);

@@ -150,7 +150,7 @@ int main(int argc, char *argv[]) {
 		printf(" --> card : "); //your initial status
 		for(i=0;i<2;i++)
 		{
-			printf("%d ",cardhold[0][i]);
+			printf("%d ", printCard(cardhold[0][i]));
 		}
 		
 		do{
@@ -171,7 +171,7 @@ int main(int argc, char *argv[]) {
 			
 			for(i=0; i<j; i++)
 			{
-				printf("%d ", cardhold[0][i]);
+				printf("%d ", printCard(cardhold[0][i]));
 			}
 			
 			if(cardIndex>52)

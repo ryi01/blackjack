@@ -14,12 +14,12 @@ void printCardInitialStatus(void) {
 	offerCards();
 
 	printf("-->> Server : X ");
-	printf("%d",cardhold[n_user][1]);
+	printf("%d", printCard(cardhold[n_user][1]));
 	
 	printf("\n-->> Your   : ");
 	for(i=0;i<2;i++)
 	{
-		printf("%d ", cardhold[0][i]);
+		printf("%d ", printCard(cardhold[0][i]));
 	}
 	
 	for(i=0; i<n_user-1; i++)
@@ -27,7 +27,7 @@ void printCardInitialStatus(void) {
 		printf("\n-->> Player %d : ", i+1);
 		for(j=0;j<2;j++)
 		{
-			printf("%d ", cardhold[i+1][j]);
+			printf("%d ", printCard(cardhold[0][j]));
 		}
 	}
 	printf("\n");

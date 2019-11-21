@@ -71,9 +71,9 @@ int calcStepResult(){
 		
 		for(j=0; j<N_MAX_GO; j++)
 		{
-			cardSum[i]=cardSum[i]+cardnum;
+			cardSum[i]=cardSum[i]+getCardNum(cardhold[i][j]);
 		
-			if(cardSum[i]>21 && cardnum ==11)
+			if(cardSum[i]>21 && getCardNum(cardhold[i][j])==11)
 			{
 				cardSum[i]=cardSum[i]-10;
 				return;
