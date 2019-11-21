@@ -122,7 +122,7 @@ int main(int argc, char *argv[]) {
 		dollar[i]=50;
 	}
 	//2. card tray
-	
+	mixCardTray();
 
 	//Game start --------
 	do {
@@ -138,7 +138,7 @@ int main(int argc, char *argv[]) {
 		printf("----------------------------------------\n\n");
 		
 		printf("-------- CARD OFFERING ---------\n");
-		
+		offerCards();
 		printCardInitialStatus();
 		
 		printf("----------------------------------------\n");
@@ -147,21 +147,26 @@ int main(int argc, char *argv[]) {
 		
 		printf(">>> YOUR TURN! ------\n");//your turn
 		
-				printf(" --> card : %d %d           ", printCard(cardhold[0][0]), printCard(cardhold[0][1])); //your initial status
+		printf(" --> card : "); //your initial status
+		for(i=0;i<2;i++)
+		{
+			printf("%d ",cardhold[0][i]);
+		}
 		
 		do{
-			printf(":::Action? (0 - go, others - stop) :");//your getaction
+			printf("           :::Action? (0 - go, others - stop) :");//your getaction
 			Go = getIntegerInput();
 		
 			if(Go==0)
 			{
-				cardhold[0][j]=mixCardTray();
+				cardhold[0][j] = mixCardTray();
 				j++;
 			}
 			else if(Go!=0)
 			{
 				break;
 			}
+			
 			printf(" --> card : ");
 			
 			for(i=0; i<j; i++)
@@ -219,14 +224,12 @@ int main(int argc, char *argv[]) {
 				printf("[Dealer result is ....overflow!!]");
 				gameend = 1;
 			}
-			
-			if(cardIndex > 52)
+			else if(cardIndex>52)
 			{
 				printf("card ran out of the tray!! finishing the game...");
-				gameend==1;
-				gameEnd=1;
-			}
-			
+				gameEnd==1;
+				break;
+			}	
 		}while(gameend=0);
 		
 		//result
@@ -234,6 +237,12 @@ int main(int argc, char *argv[]) {
 		checkResult();
 		roundIndex++;
 		
+		for(i=0; i<n_user; i++){
+			if(dollar[i]==0)
+			{
+				gameEnd = 1;
+			}
+		}
 	} while (gameEnd == 0);
 	
 	checkWinner();

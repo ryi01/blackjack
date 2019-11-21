@@ -4,6 +4,7 @@ extern int n_user;
 extern int cardSum[N_MAX_USER];
 extern int bet[N_MAX_USER];
 extern int dollar[N_MAX_USER];
+extern int gameEnd;
 
 int checkResult(){
 	
@@ -43,5 +44,4 @@ int checkResult(){
 			printf(" --> Player %d : Overflow!! (sum : %d) ---> $%d\n", i+1, cardSum[i+1], dollar[i+1]);
 		}
 	}
-	
 }

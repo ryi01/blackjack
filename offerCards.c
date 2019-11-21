@@ -11,10 +11,11 @@ extern int cardIndex;
 
 int pullcard(){
 	
-	mixCardTray();
+	int i;
 	
-	cardIndex++;//using card sum
-
+	i = mixCardTray();
+	
+	return i; 
 }
 //offering initial 2 cards
 void offerCards(void) {

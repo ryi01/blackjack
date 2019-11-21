@@ -2,9 +2,7 @@
 #include <stdlib.h>
 
 //print the card information (e.g. DiaA)
-void printCard() {
-	
-	int i;
+void printCard(int i) {
 	
 	if(0<i&&i<10)
 	{

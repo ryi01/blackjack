@@ -9,17 +9,27 @@ extern int cardhold[N_MAX_USER+1][N_MAX_CARDHOLD];
 //print initial card status
 void printCardInitialStatus(void) {
 	
-	int i;
+	int i, j;
 	
 	offerCards();
 
-	printf("-->> Server : X %d\n", cardhold[n_user][1]);
+	printf("-->> Server : X ");
+	printf("%d",cardhold[n_user][1]);
 	
-	printf("-->> Your   : %d %d\n", cardhold[0][0], cardhold[0][1]);
+	printf("\n-->> Your   : ");
+	for(i=0;i<2;i++)
+	{
+		printf("%d ", cardhold[0][i]);
+	}
 	
 	for(i=0; i<n_user-1; i++)
 	{
-		printf("-->> Player %d : %d %d\n", i+1, cardhold[i+1][0], cardhold[i+1][1]);
-	 } 
+		printf("\n-->> Player %d : ", i+1);
+		for(j=0;j<2;j++)
+		{
+			printf("%d ", cardhold[i+1][j]);
+		}
+	}
+	printf("\n");
 	 
 }

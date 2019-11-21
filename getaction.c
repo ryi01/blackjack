@@ -14,44 +14,45 @@ extern int n_user;
 int getAction(){
 	
 	int i;
-	int j=0;
+	int j=2;
 	int cardSum[i];
 	
 	calcStepResult();
+	offerCards();
 	
 	do{
 		
-		if(cardSum[i]<17)
+		printf("           ::: GO!! \n");
+		
+		cardhold[i][j] = mixCardTray();
+		j++;
+			
+		printf(" --> card : ");
+			
+		for(i=0; i<j; i++)
 		{
-			printf("           ::: GO!! \n");
+			printf("%d ", cardhold[i][j]);
+		}
 			
-			cardhold[i][j+2] = mixCardTray();
-			j++;
-			
-			printf(" --> card : ");
-			
-			for(i=0; i<j; i++)
-			{
-				printf("%d ", cardhold[i][j]);
-			}
-			
-		}	
 	}while(cardSum[i]<17);
 	
 	if(cardSum[i]>17)
 	{
 		printf("           ::: STAY!! \n");
+		printf("\n\n");
 	}
 		
 	else if(cardSum[i]>21)
 	{
 		dollar[i]=dollar[i] - bet[i];
 		printf("           ::: DEAD  (sum : %d) --> -$%d (%d)\n", cardSum[i], bet[i], dollar[i]);
+		printf("\n\n");
 	}
 	else if(cardSum[i]==21)
 	{
 		dollar[i] = dollar[i] + 2*bet[i];
 		printf("           ::: BLACK JACK!!!-%d (%d)\n", cardSum[i], bet[i], dollar[i]);
+		printf("\n\n");
 	}	
 	if(cardSum[n_user]>17)
 	{

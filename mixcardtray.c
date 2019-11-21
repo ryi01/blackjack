@@ -13,16 +13,20 @@ extern int cardIndex;
 int mixCardTray(){
 	
 	int i, j;
-	int card;
-
+	
 	srand((unsigned)time(NULL));
 	
-	for(i=0;i<N_CARD;i++)
+	for(i=0; i<N_CARD; i++)
 	{
-		j = rand()%52;
-		
-		card = CardTray[i];
-		CardTray[i]=CardTray[j];
-		CardTray[j]=card;
+		CardTray[i]=rand()%52;
+		for(j=0; j<i; j++)
+		{
+			if(CardTray[i]==CardTray[j])
+			{
+				i--;
+				break;
+			}
+	 }
 	}
+	return CardTray[i];
 }
