@@ -90,13 +90,15 @@ int betDollar(void) {
 	}
 	bet[0]=betting;
 	
-	for(i=1; i<n_user; i++)//not include you
+	for(i=0; i<n_user-1; i++)//not include you
 	{
 		
-		bet[i]=rand()%5+1;//player bet
+		bet[i+1]=rand()%5+1;//player bet
 		
-		printf("player %d : $%d\n", i, bet[i]);
+		printf("player %d : $%d\n", i+1, bet[i+1]);
 	}
+	
+	return bet[i];
 }
 
 
@@ -116,9 +118,9 @@ int main(int argc, char *argv[]) {
 	//Game initialization --------
 	//1. players' dollar
 	for(i=0; i<n_user; i++)
-		{
-			dollar[i]=50;
-		}
+	{
+		dollar[i]=50;
+	}
 	//2. card tray
 	
 
@@ -180,7 +182,7 @@ int main(int argc, char *argv[]) {
 		//each player's turn
 		for(i=1; i<(n_user); i++) //each player
 		{
-			printf(">>> Player %d TURN! ------ \n", i+1);
+			printf(">>> Player %d TURN! ------ \n", i);
 			
 			do //do until the player dies or player says stop
 			{
@@ -202,7 +204,8 @@ int main(int argc, char *argv[]) {
 			
 			if(cardSum[n_user]<21)
 			{
-				return;
+				printf("[Dealer result is ....%d]", cardSum[n_user]);
+				gameend=1;
 			}
 			else if(cardSum[n_user]==21)
 			{
@@ -217,20 +220,17 @@ int main(int argc, char *argv[]) {
 				gameend = 1;
 			}
 			
-			getAction();
-			
-			if(cardIndex>52)
+			if(cardIndex > 52)
 			{
 				printf("card ran out of the tray!! finishing the game...");
-				gameEnd==1;
-				break;
+				gameend==1;
+				gameEnd=1;
 			}
 			
 		}while(gameend=0);
 		
-		
 		//result
-		printf("----------Round %d result", roundIndex+1);
+		printf("\n\n----------Round %d result\n", roundIndex+1);
 		checkResult();
 		roundIndex++;
 		

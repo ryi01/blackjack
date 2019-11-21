@@ -9,45 +9,52 @@ extern int cardhold[N_MAX_USER+1][N_MAX_CARDHOLD];
 extern int getaction;
 extern int dollar[N_MAX_USER];
 extern int bet[N_MAX_USER];	
+extern int n_user;
 
 int getAction(){
 	
-	int i, j;
+	int i;
+	int j=0;
 	int cardSum[i];
+	
+	calcStepResult();
 	
 	do{
 		
 		if(cardSum[i]<17)
 		{
-			printf("::: GO!! \n");
-			cardhold[i][j+2]=mixCardTray();
+			printf("           ::: GO!! \n");
+			
+			cardhold[i][j+2] = mixCardTray();
 			j++;
-			return;
-		}
-		else if(cardSum[i]>17)
-		{
-			printf("::: STAY!! \n");
-			break;
-		}
-		printf(" --> card : ");
 			
-		for(i=0; i<j; i++)
-		{
-			printf("%d ", cardhold[i][j]);
-		}
-		
-		if(cardSum[i]>21)
-		{
-			dollar[i]-=bet[i];
-			printf("::: DEAD  (sum : %d) --> -$%d (%d)\n", cardSum[i], bet[i], dollar[i]);
-			break;
-		}
-		else if(cardSum[i]==21)
-		{
-			dollar[i]=2*bet[i];
-			printf("::: BLACK JACK!!!-\n", cardSum[i], bet[i], dollar[i]);
-			break;
-		}		
+			printf(" --> card : ");
 			
+			for(i=0; i<j; i++)
+			{
+				printf("%d ", cardhold[i][j]);
+			}
+			
+		}	
 	}while(cardSum[i]<17);
+	
+	if(cardSum[i]>17)
+	{
+		printf("           ::: STAY!! \n");
+	}
+		
+	else if(cardSum[i]>21)
+	{
+		dollar[i]=dollar[i] - bet[i];
+		printf("           ::: DEAD  (sum : %d) --> -$%d (%d)\n", cardSum[i], bet[i], dollar[i]);
+	}
+	else if(cardSum[i]==21)
+	{
+		dollar[i] = dollar[i] + 2*bet[i];
+		printf("           ::: BLACK JACK!!!-%d (%d)\n", cardSum[i], bet[i], dollar[i]);
+	}	
+	if(cardSum[n_user]>17)
+	{
+		printf("[[ Dealer result is %d.....]]", cardSum[n_user]);
+	}
 }

@@ -11,12 +11,12 @@ int checkWinner(){
 	
 	printf("----------------------------------------\n\n");
 	printf("----------------------------------------\n\n");
-	printf("----------------------------------------");
-	printf("game end!\n Your money : $%d\n", dollar[0]);
+	printf("------------------ GAME END! ------------------");
+	printf("\n\n Your money : $%d\n", dollar[0]);
 	
-	for(i=1; i<n_user; i++)
+	for(i=0; i<n_user-1; i++)
 	{
-		printf("Player %d money : %d\n", i, dollar[i]);
+		printf("Player %d money : %d\n", i+1, dollar[i+1]);
 	}
 	
 	for(i=0; i<n_user; i++)
@@ -31,8 +31,22 @@ int checkWinner(){
 	{
 		printf("Winner is you!!\n");
 	}
-	else if(max!=dollar[0])
+	else if(max==dollar[1])
 	{
-		printf("Winner is Player %d!!\n", i);
+		printf("Winner is Player 1!!\n");
 	}
+	else if(max==dollar[2])
+	{
+		printf("Winner is Player 2!!\n");
+	}
+	else if(max==dollar[3])
+	{
+		printf("Winner is Player 3!!\n", 3);
+		
+	}
+	else if(max==dollar[4])
+	{
+		printf("Winner is Player %d!!\n", 4);
+	}
+	
 }
